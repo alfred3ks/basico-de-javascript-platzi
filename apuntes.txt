@@ -330,9 +330,146 @@ var nombre = "Abrines";
 NOTA:
     Por buenas practicas se recomienda declarar todas las variables al inicio del codigo.
 
-NOTA las funciones flcehas no hacen hoistin ni las funciones anonimas si usamos let.
+NOTA las funciones flechas no hacen hoistin ni las funciones anonimas si usamos let.
 
 let niFuncion = function(){return a + b};
 
+Podemos ver esta web donde explica un poco mas profundo el tema del hoisting en JS:
+
+    https://anamartinezaguilar.medium.com/qu%C3%A9-es-el-hoisting-327870f67b36
+
+En JavaScript, las declaraciones (por ejemplo, de variables o funciones) se mueven al principio de su scope o ámbito. Este comportamiento se conoce como hoisting y es muy importante tenerlo en cuenta a la hora de programar para prevenir posibles errores.
+Teniendo en cuenta cómo funciona el hoisting, podemos llamar a una función y definirla más abajo, porque automáticamente JS la “subirá”. Así, este código funciona correctamente:
+
+add();
+function add() {
+   var myNumber = 4;
+   console.log(myNumber + myNumber);
+}
+
+Porque, aproximadamente, JS está haciendo:
+
+function add() {
+    var myNumber;
+    myNumber = 4;
+    console.log(myNumber + myNumber);
+}
+add();
+
+En el caso de las variables, es muy importante tener en cuenta que el hoisting solo se aplica a la declaración, y no a su asignación.
+Por lo tanto, NO podríamos escribir esto:
+
+//Error
+add();
+function add() {
+    console.log(myNumber + myNumber);
+}
+var myNumber = 4;
+
+Es esencial quedarnos con dos conceptos:
+
+Las funciones siempre se mueven arriba del scope. Por lo tanto, podemos elegir donde declararlas y usarlas.
+
+La declaración de las variables se mueven arriba del scope, pero no la asignación. Antes de usar una variable, habrá que crearla y asignarla.
+
+_________
+COERCION:
+---------
+
+Coerción: es el cambio de tipo de las variables.
+
+Coerción es la forma en la que podemos cambiar un tipo de valor a otro, existen dos tipos de coerción:
+
+Coerción implícita = es cuando el lenguaje nos ayuda a cambiar el tipo de valor.
+
+Coerción explicita = es cuando obligamos a que cambie el tipo de valor.
+
+*/
+
+// Ejemplos: aqui vemos una coerción implicita donde JS hace una concatenación, hay dos valores de diferentes tipos, y cambia el tipo del resultado a string.
+
+let a = 4;
+let b = "7"
+let suma = a + b;
+console.log(suma); // "47"
+console.log( typeof suma); // string what????
+
+let producto = a * b;
+console.log(producto); // 28
+console.log( typeof producto); // number pero whatsss???
+
+// Ahora veremos unos ejemplos de coerción explicita:
+let c = 20;
+let d = c + " ";
+console.log(d); // "20"
+console.log( typeof d ); // string
+
+// Nosotros obligamos el cambio de tipo, osea hacer una coercion explicita
+let f = 30;
+let g = String(f);
+console.log(g); // "30"
+console.log(typeof g); // string
+
+let h = Number(g);
+console.log(h); // 30
+console.log( typeof h); // number
+
+OJO este punto es importante, ya que si eperamos que nos venga un numero y nos viene es un string nuestro resultado podria ser erroneo.
+
+_________________________
+VALORES TRUTHY AND FALSY:
+-------------------------
+
+Vamos a ver los valores de los datos, en JS tenemos valores que son verdaderos y otros que son falsos: Es lo que llamamos los valores truthy y otros falsy, y es muy importante sobre todo cuando vamos a aplicar condicionales, en JS los valores tiene un valor por default. O son true o false.
+
+Vamos a utilizar una funcion que nos da el lenguaje Boolean() con la cual vamos a saber si un valor es falso o verdadero:
 
 
+
+Aqui vemos que tipo de valor es algo:
+
+Valores false:
+
+    let valor1 = Boolean(0);
+    console.log( valor1 ); // false
+
+    let valor2 = Boolean(null);
+    console.log( valor2 ); // false
+
+    let valor3 = Boolean(NaN);
+    console.log( valor3 ); // false
+
+    let valor4 = Boolean(undefined);
+    console.log( valor4 ); // false
+
+    let valor5 = Boolean(false);
+    console.log( valor5 ); // false
+
+    let valor7 = Boolean("");
+    console.log( valor7 ); // false
+
+    const valor14 = Boolean();
+    console.log(valor14); // false
+
+ValoreS true:
+
+    let valor8= Boolean(" ");
+    console.log( valor8 ); // true
+
+    let valor9 = Boolean(1);
+    console.log( valor9 ); // true
+
+    let valor10 = Boolean([]);
+    console.log( valor10 ); // true
+
+    let valor11 = Boolean({});
+    console.log( valor11 ); // true
+
+    let valor12 = Boolean(function(){});
+    console.log( valor12 ); // true
+
+    let valor13 = Boolean(true);
+    console.log( valor13 ); // true
+
+    let valor14 = Boolean(-1);
+    console.log( valor14 ); // true
