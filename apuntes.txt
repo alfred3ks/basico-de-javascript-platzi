@@ -122,3 +122,53 @@ console.log(typeof admin);// object
 console.log(typeof edad);// undefined
 console.log(typeof frutas);// object
 console.log(typeof usuario);// object
+
+
+_______________
+VARIABLES EN JS:
+---------------
+Son los contenedores dentro de la memoria que podemos reservar para guardar los valores, JS tiene una palabra reservada llamada let, para las varables y const para las constantes.
+
+let nombre = "Juan";
+console.log(nombre); // Juan
+
+Existen dos estados de las variables, una es la declaracion y otra es la inicializacion.
+
+declaramos una variable:
+
+let apellido;
+console.log(apellido); // undefined
+
+inicializamos los valores a esa variable
+apellido = "Gomez";
+console.log(apellido); // Gomez
+
+Creamos un array con declaracion y iniciacion al mismo tiempo:
+Conjunto de elementos:
+
+let equipo = ["PC", "Movil", "Monitor", "Teclado"];
+console.log(equipo); // [ 'PC', 'Movil', 'Monitor', 'Teclado' ]
+console.log(equipo[1]); // Movil
+
+Ahora con un objeto:
+
+let persona = {
+    nombre: "Laika",
+    apellido: "De la Concepcion",
+    edad: 5
+}
+console.log(persona); // { nombre: 'Laika', apellido: 'De la Concepcion', edad: 5 }
+
+console.log(persona.nombre); // Laika
+
+_____________________
+LAS CONSTANTES EN JS:
+---------------------
+A diferencia de las variables que pueden cambiar a lo largo de nuestro programa, las constantes no. Su valor es inmutable una ves declaradas.
+
+
+const ciudad = "China";
+ciudad = "EEUU"; // Nos da error
+
+    Uncaught TypeError: Assignment to constant variable.
+
