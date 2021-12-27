@@ -172,3 +172,62 @@ ciudad = "EEUU"; // Nos da error
 
     Uncaught TypeError: Assignment to constant variable.
 
+__________
+Funciones:
+----------
+Son un conjunto de sentencias que podemos utilizar para generar ciertas acciones con los valores ya guardados antes en las variables.
+
+Las funciones son fragmentos de codigo reutilizable.
+Para definir una funcion utilizaremos a palabra reservada function.
+
+Existen dos formas de declarar una funciones: Declarativas y las de Expresion:
+_____________
+Declarativas:
+-------------
+
+function miFuncion() {
+    return 3;
+    }
+
+miFuncion();
+
+______________________
+Expresion: (anonimas):
+----------------------
+
+let miFuncion = function(a,b){
+    return a + b;
+    }
+
+miFuncion(3,5); // 8
+
+Las funciones en funcion del tipo que sean pueden recibir parmetros.
+
+Tambien existen las funciones flechas:
+
+let play = () => {
+    return "Vamos a jugar";
+}
+
+play();
+
+Nota importante, las funciones pueden o no devolver valores, lo vemos con la palabra reservada return, si creamos una funcion sin el return veremos que aunque le hagamos una llamada con el console.log no nos mostrara nada, veamos este ejemplo:
+
+let dato1 = (a,b)=>{
+    let resultado = a + b;
+    return resultado;
+}
+
+let dato2 = (a,b)=>{
+    let resultado = a + b;
+    console.log(resultado);
+}
+
+console.log(dato1(7,9));
+dato2(8,9);
+
+Aunque vemos por pantalla que nos retorna un resultado, la primera funcion dato1 esta devolviiendo el resultado y ese valor es el que se muestra en el pimer console.log.
+
+En cambio en la segunda funcion al llamarla es el console.log dentro de ella que se ejecuta pero esta funcion no devuelve nada.
+
+
