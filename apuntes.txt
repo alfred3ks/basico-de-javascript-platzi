@@ -473,3 +473,8 @@ ValoreS true:
 
     let valor14 = Boolean(-1);
     console.log( valor14 ); // true
+
+_________________
+OPERADORES EN JS:
+-----------------
+En la pagina 35 del manual tenemos los diferentes tipos de opearadores que podemos encontrar en el lenguaje de JS:
