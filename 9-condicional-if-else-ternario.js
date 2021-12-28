@@ -6,7 +6,7 @@ else, por el contrario, es usado para ejecutar un código si la expresión es fa
 
 No necesariamente hay que usar siempre if con else, if puede usarse sólo sin necesidad de evaluar cuando la condición es false.
 
-Vemos como es:
+Vemos como es su sintaxis:
 
     if(condicion){
         code...
