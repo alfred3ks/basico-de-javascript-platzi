@@ -835,3 +835,26 @@ let miAuto = {
 }
 
 Ahora que ya tenemos un objeto y queremos replicar 30 objeto de un tipo en este caso carro, lo veremos en el siguiente clase. Veremos la funcion constructora que nos ayudara a construir objetos de manera mas facil y rapida.
+
+_____________________________
+OBJETOS FUNCION CONSTRUCTORA:
+-----------------------------
+Objetos, funcion constructora: Generaremos un template del objeto y luego vamos a construir los objetos.
+
+Construimos nuestro template: Recibe las propiedades por parametro:
+Tambien por convension llamaremos en mayuscula la funcion:
+
+    function Auto(marca, modelo, annio){
+        this.marca = marca;
+        this.modelo = modelo;
+        this.annio = annio;
+
+    }
+
+Ahora para construir un objeto necesitariamos la palabra reservada new:
+
+    let miAuto = ew Auto("Toyota", "Corolla", 2000);
+    miAuto.marca;
+    miAuto.modelo;
+    miAuto.annio;
+
