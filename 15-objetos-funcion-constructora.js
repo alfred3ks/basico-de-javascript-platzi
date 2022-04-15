@@ -14,7 +14,7 @@ Tambien por convension llamaremos en mayuscula la funcion:
 
 Ahora para construir un objeto necesitariamos la palabra reservada new:
 
-    let miAuto = ew Auto("Toyota", "Corolla", 2000);
+    let miAuto = new Auto("Toyota", "Corolla", 2000);
     miAuto.marca;
     miAuto.modelo;
     miAuto.annio;
